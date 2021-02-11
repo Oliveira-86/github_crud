@@ -1,0 +1,42 @@
+.home-container {
+    padding: 180px 700px 265px 120px ;
+
+}
+
+.text-title {
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 64px;
+    
+
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.02em;
+}
+
+.text-subtitle {
+    font-size: 20px;
+    line-height: 36px;
+    color: #5A6774;
+    margin-top: 25px;
+}
+
+.button-home {
+    width: 101px;
+    height: 40px;
+    margin-top: 60px;
+}
+
+.button-text {
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    /* Grey / grey-1 */
+
+    color: #FFFFFF;
+}
