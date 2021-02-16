@@ -1,8 +1,10 @@
-import axios from 'axios';
+
 import React, { useState } from 'react';
 import { User } from '../../core/types/User';
 import { makeResquest } from '../../core/utils/request';
 import AvatarDetails from './components/AvatarDetails';
+import ImageLoader from './components/Loaders/ImageLoader';
+import InfoLoader from './components/Loaders/InfoLoader';
 import './styles.scss';
 
 
@@ -10,11 +12,14 @@ import './styles.scss';
 const Search = () => {
     const [login, setLogin] = useState('');
     const [user, setUser] = useState<User>();
+    const [isloader, setIsLoader] = useState(false);
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
+        setIsLoader(true);
         makeResquest({ url: `/${login}` })
-        .then(userResponse => setUser(userResponse.data));
+            .then(userResponse => setUser(userResponse.data))
+            .finally(() => setIsLoader(false));
     }
 
     const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -42,10 +47,14 @@ const Search = () => {
                         Encontrar
                 </button>
                 </div>
-               {user && (<div >
-                        <AvatarDetails user={user}/>
-                </div>)}
-
+                
+                    {isloader && <ImageLoader />} {isloader && <InfoLoader />}
+                    {!isloader && (
+                        user &&
+                        (<div >
+                            <AvatarDetails user={user} />
+                        </div>)
+                    )}               
             </div>
         </form>
     );
