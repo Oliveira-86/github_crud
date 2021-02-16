@@ -1,3 +1,12 @@
+.main-container {
+    width: 1251px;
+    height: 387px;
+    left: 0px;
+    top: 0px;
+    background: #F5F5F5;
+    border-radius: 8px;
+}
+
 .avatar-details {
     display: flex;
 }
@@ -6,6 +15,13 @@
     display: flex;
     text-align: left;
     
+}
+
+.avatar-img {
+    width: 284px;
+    height: 280px;
+    left: 30px;
+    top: 23px;
 }
 
 .info-repo {

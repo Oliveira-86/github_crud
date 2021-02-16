@@ -8,10 +8,10 @@ type Props = {
 
 const AvatarDetails = ({ user }:Props) => (
 
-    <div>
+    <div className="main-container">
         <div className="avatar-container">
             <div className="avatar-details">
-                {user.avatar_url}
+               <img src= {user.avatar_url} alt={user.name} className="avatar-img" />
                 <div className="avatar-info">
                     <div className="header-info">
                         <ul className="list-info">
@@ -63,8 +63,6 @@ const AvatarDetails = ({ user }:Props) => (
                     Ver Perfil
             </button>
         </div>
-
-
     </div>
 );
 

@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useState } from 'react';
 import { User } from '../../core/types/User';
 import { makeResquest } from '../../core/utils/request';
@@ -10,19 +11,16 @@ const Search = () => {
     const [login, setLogin] = useState('');
     const [user, setUser] = useState<User>();
 
+    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        makeResquest({ url: `/${login}` })
+        .then(userResponse => setUser(userResponse.data));
+    }
+
     const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setLogin(event.target.value);
     }
 
-    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-        event.preventDefault();
-        const payload = {
-            login
-        }
-
-    makeResquest({ url: `/${login}`, method: 'GET', data: payload })
-        .then(response => setUser(response.data));
-    }
 
     return (
         <form onSubmit={handleSubmit}>
@@ -44,9 +42,9 @@ const Search = () => {
                         Encontrar
                 </button>
                 </div>
-                <div >
-                    <AvatarDetails user={user?.login} />
-                </div>
+               {user && (<div >
+                        <AvatarDetails user={user}/>
+                </div>)}
 
             </div>
         </form>
