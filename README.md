@@ -3,6 +3,8 @@
 
 ![HOME](https://i.imgur.com/wpMXnyL.png)
 ![SEARCH](https://i.imgur.com/0YTLMTJ.png)
+![LOADER](https://i.imgur.com/V6xw4DW.png)
+![LOGIN](https://i.imgur.com/EHSKzRW.png)
 
 ## Project Description
 
