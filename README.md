@@ -1,4 +1,4 @@
-# Github_CRUD
+# Github_Search
 ### Project carried out 100% with ReactJS.
 
 ![HOME](https://i.imgur.com/wpMXnyL.png)
