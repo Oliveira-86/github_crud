@@ -1,5 +1,5 @@
 # Github_CRUD
-### My first project carried out 100% with ReactJS.
+### Project carried out 100% with ReactJS.
 
 ![HOME](https://i.imgur.com/wpMXnyL.png)
 ![SEARCH](https://i.imgur.com/0YTLMTJ.png)
