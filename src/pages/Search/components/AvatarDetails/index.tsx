@@ -1,62 +1,71 @@
 import React from 'react';
-import { ReactComponent as AvatarImg } from '../../../../core/assets/image/profile.svg'
+import { User } from '../../../../core/types/User';
 import './styles.scss';
 
-const AvatarDetails = () => (
+type Props = {
+    user: User;
+}
 
-   <div className="avatar-details">
-       <AvatarImg />
-       <div className="avatar-info">
-            <div className="header-info">
-                <ul className="list-info">
-                    <li className="info-repo mr-2">
-                        <h6 className="text-header">
-                            Repositórios públicos: 62
+const AvatarDetails = ({ user }:Props) => (
+
+    <div>
+        <div className="avatar-container">
+            <div className="avatar-details">
+                {user.avatar_url}
+                <div className="avatar-info">
+                    <div className="header-info">
+                        <ul className="list-info">
+                            <li className="info-repo mr-2">
+                                <h6 className="text-header">
+                                    {user.public_repos}
                         </h6>
-                    </li>
-                    <li className="info-repo mr-2">
-                        <h6 className="text-header">
-                            Seguidores: 127
+                            </li>
+                            <li className="info-repo mr-2">
+                                <h6 className="text-header">
+                                    {user.followers}
                         </h6>
-                    </li>
-                    <li className="info-repo">
-                        <h6 className="text-header">
-                            Seguindo: 416   
+                            </li>
+                            <li className="info-repo">
+                                <h6 className="text-header">
+                                    {user.following}
                         </h6>
-                    </li>
-                </ul>
-            </div>
-            <div className="info-body">
-                <h3 className="info-title">
-                    Informações
+                            </li>
+                        </ul>
+                    </div>
+                    <div className="info-body">
+                        <h3 className="info-title">
+                            Informações
                 </h3>
-                <div className="company-content">
-                    <h3 className="company-text">
-                        <b>Empresa:</b> @ZupIT 
+                        <div className="company-content">
+                            <h3 className="company-text">
+                                <b>Empresa:</b> {user.company}
                     </h3>
-                </div>
-                <div className="company-content">
-                    <h3 className="company-text">
-                       <b>Website/Blog:</b>  https://thewashington.dev 
+                        </div>
+                        <div className="company-content">
+                            <h3 className="company-text">
+                                <b>Website/Blog:</b> {user.blog}
                     </h3>
-                </div>
-                <div className="company-content">
-                    <h3 className="company-text">
-                        <b>Localidade:</b> Uberlândia 
+                        </div>
+                        <div className="company-content">
+                            <h3 className="company-text">
+                                <b>Localidade:</b> {user.location}
                     </h3>
-                </div>
-                <div className="company-content">
-                    <h3 className="company-text">
-                        <b>Membro desde:</b> 19/10/2013 
+                        </div>
+                        <div className="company-content">
+                            <h3 className="company-text">
+                                <b>Membro desde:</b>{user.created_at}
                     </h3>
+                        </div>
+                    </div>
                 </div>
             </div>
             <button className="btn btn-primary button-info">
-                Ver Perfil
+                    Ver Perfil
             </button>
-       </div>
-       
-   </div>
+        </div>
+
+
+    </div>
 );
 
 export default AvatarDetails;
