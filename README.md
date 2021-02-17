@@ -19,6 +19,7 @@ Also, it’s good to have an editor to work with code like [VSCode](https://code
 * ``` npx create-react-app front-web --template typescript ```
 * ``` yarn add react-router-dom ```
 * ``` yarn add react-content-loader ```
+* ``` yarn add axios ```
 * ``` yarn start ```
 
 
