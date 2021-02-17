@@ -17,6 +17,7 @@ Before you begin, you will need to have the following tools installed on your ma
 Also, it’s good to have an editor to work with code like [VSCode](https://code.visualstudio.com/).
 
 * ``` npx create-react-app front-web --template typescript ```
+* ``` yarn add react-router-dom ```
 * ``` yarn add react-content-loader ```
 * ``` yarn start ```
 
